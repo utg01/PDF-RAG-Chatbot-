@@ -1,0 +1,468 @@
+[
+  {
+    "id": "Q001",
+    "question": "How many primary macro-regions is OmniScale Systems' infrastructure geographically dispersed across?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9888265159850209,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q002",
+    "question": "Which relational database technology does OmniScale Systems use for its primary transactional data stores?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.999004569475344,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q003",
+    "question": "What tool does OmniScale Systems mandate as a centralized connection pooler for PostgreSQL?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9582177609460303,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q004",
+    "question": "What is the default (general) maximum database connection pool size for microservices?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9623603544658181,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q005",
+    "question": "Whose explicit approval must the Operations Lead obtain before restarting the Core Ledger Database cluster, and why?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9549263625126863,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q006",
+    "question": "What statistical test does OmniScale use to evaluate canary deployments against baseline metrics, and why is it preferred over an alternative test?",
+    "scores": {
+      "faithfulness": 0.42857142857142855,
+      "answer_relevancy": 0.9162674160390187,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q007",
+    "user_input": "What is a Circuit Breaker pattern, and what problem does it solve?",
+    "faithfulness": 0.95,
+    "answer_relevancy": 0.9480782409544415,
+    "context_precision": 0.9999999999,
+    "context_recall": 1.0
+  },
+  {
+    "id": "Q008",
+    "user_input": "Explain the concept of an error budget and how it affects engineering behavior when fully depleted.",
+    "faithfulness": NaN,
+    "answer_relevancy": 0.9178874395311871,
+    "context_precision": 0.9999999999,
+    "context_recall": 1.0
+  },
+  {
+    "id": "Q009",
+    "question": "What is the cache stampede (dog-piling) problem, and what two techniques does OmniScale use to mitigate it?",
+    "scores": {
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.9113795382261146,
+      "context_precision": 0.0,
+      "context_recall": 0.5
+    }
+  },
+  {
+    "id": "Q010",
+    "question": "Describe the purpose of the Bulkhead pattern and the example used to illustrate it.",
+    "scores": {
+      "faithfulness": 0.9285714285714286,
+      "answer_relevancy": 0.9515340120697081,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q011",
+    "question": "Why does the handbook insist SLIs be measured at the user-facing boundary rather than deep within internal services, and what example illustrates this?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9500056353906737,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q012",
+    "question": "A Tier 1 service (other than the Core Data Warehouse) suffers total loss during a regional outage. Based on the Tier 1 deployment requirement and the DR RTO override, what deployment model and recovery time apply to it?",
+    "scores": {
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.8855479982205188,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q013",
+    "question": "Compare how a Tier 1 service showing error rates slightly above baseline would be classified and paged on a regular Tuesday versus during the Black Friday/Cyber Monday window.",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9440908880389812,
+      "context_precision": 0.99999999995,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q014",
+    "question": "In Case Study 5 (The Stale Auth Stampede), which specific TTL override caused the Redis cache to be entirely cold after reboot, and which named failure mode explains the resulting load on the IAM database?",
+    "scores": {
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.8419847406246358,
+      "context_precision": 0.9999999999,
+      "context_recall": 0.5
+    }
+  },
+  {
+    "id": "Q015",
+    "question": "Combining the Incident Response Lifecycle's phases with the Post-Incident Review timing rules, how long after a SEV-1 incident's resolution must a preliminary PIR be presented, and to whom?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7942204509613899,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q016",
+    "question": "Case Study 7 describes a Raft heartbeat interval of 10 seconds, while the Database Reliability section describes a randomized election timeout of 150-300ms. Using both, what caused the AZ-2 nodes to incorrectly elect a new leader?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8219625050010765,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q017",
+    "question": "Compare Tier 1 and Tier 2 services in terms of what happens when each is degraded.",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9206477020460965,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q018",
+    "question": "Compare the standard circuit breaker error threshold with the threshold used for the Fraud Detection API, and explain the difference.",
+    "scores": {
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.9677340523507404,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q019",
+    "question": "Compare a Bi-encoder and a Cross-Encoder as described in Case Study 6, in terms of speed and accuracy trade-offs.",
+    "scores": {
+      "faithfulness": 0.5833333333333334,
+      "answer_relevancy": 0.9362223016878913,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q020",
+    "question": "Compare the standard RPO for the relational data tier with the RPO mandated for the Core Ledger Database, including how each is achieved.",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9139130470745126,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q021",
+    "question": "What is the relationship between a depleted error budget and feature deployments?",
+    "scores": {
+      "faithfulness": 0.6,
+      "answer_relevancy": 0.8406647792999986,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q022",
+    "question": "What causal relationship does the handbook describe between database connection pool exhaustion and application-tier crashes?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8851108059610417,
+      "context_precision": 0.9999999999666667,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q023",
+    "question": "What is the relationship between replication lag and data loss during a database failover?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9351927988955997,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q024",
+    "question": "According to Case Study 4, what is the causal chain connecting the length of the uploaded video files to the eventual stalling of the entire event pipeline?",
+    "scores": {
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.8965833491153453,
+      "context_precision": 0.9999999999,
+      "context_recall": 0.5
+    }
+  },
+  {
+    "id": "Q025",
+    "question": "What is the exact monthly downtime allowance, in minutes, for a service with a 99.9% SLO evaluated over a rolling 30-day window?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8678046099239597,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q026",
+    "question": "What burn rate multiplier and time windows trigger OmniScale's fast burn pager alert?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8804584879639208,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q027",
+    "question": "What is the general W3C Baggage header size limit across the platform, and what is the override for the internal gRPC service mesh?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9697100414780827,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q028",
+    "question": "If a microservice processes 1 million requests per day, how many failed requests are allowed per 30-day month under a 99.9% SLO, and how is this figure derived?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9641745770212548,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q029",
+    "question": "How long does it take to exhaust an entire 30-day error budget when a service sustains a 14.4x burn rate, and which case study illustrates a burn-rate-triggered detection?",
+    "scores": {
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.96241425162784,
+      "context_precision": 0.99999999995,
+      "context_recall": 0.5
+    }
+  },
+  {
+    "id": "Q030",
+    "question": "Define a Service Level Indicator (SLI) as given in the handbook.",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9410917578410364,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q031",
+    "question": "Define Burn Rate per the glossary.",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8648076316247806,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q032",
+    "question": "What is the definition of the Poison Pill failure mode in Kafka-based event processing?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9553957329570727,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q033",
+    "question": "Define Active-Active and explain how it is distinguished from Active-Passive in the glossary.",
+    "scores": {
+      "faithfulness": 0.8571428571428571,
+      "answer_relevancy": 0.8783832442469361,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q034",
+    "question": "What does a traceparent header trace-flags value of 01 indicate, per the W3C Trace Context definition in the handbook?",
+    "scores": {
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.9456652064356105,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q035",
+    "question": "A Tier 3 internal reporting dashboard experiences a complete outage on a normal Wednesday. What severity would this be classified as, and would the on-call engineer be paged immediately?",
+    "scores": {
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8119453800059855,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q036",
+    "question": "An engineer wants to deploy a routine, non-emergency code change on a Friday evening. Is this permitted under the handbook's deployment policy?",
+    "scores": {
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.9060255069917411,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q037",
+    "question": "A downstream REST endpoint charges a customer's credit card without an idempotency key, and a transient HTTP 503 occurs on that call. Per the retry policy, what should the client do, and why?",
+    "scores": {
+      "faithfulness": 0.6,
+      "answer_relevancy": 0.7990069030248318,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q038",
+    "question": "A SEV-1 incident is declared involving a confirmed data breach with exfiltrated customer data. Who assumes the Incident Commander role, and how does public communication differ from a standard incident?",
+    "scores": {
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.9290993257027701,
+      "context_precision": 0.99999999995,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q039",
+    "question": "The handbook labels two different policies 'Specific Override 10' -- one in the DR Rules policy summary and one in Case Study 6's preventive measures. What are these two policies, and how might this naming overlap confuse a reader?",
+    "scores": {
+      "faithfulness": 0.35294117647058826,
+      "answer_relevancy": 0.8679144303496189,
+      "context_precision": 0.0,
+      "context_recall": 0.3333333333333333
+    }
+  },
+  {
+    "id": "Q040",
+    "question": "Case Study 7 states the Raft heartbeat interval is 10 seconds, but the Database Reliability section states the randomized election timeout is typically 150-300ms. Are these the same parameter?",
+    "scores": {
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.9085956077772733,
+      "context_precision": 0.9999999999,
+      "context_recall": 0.6666666666666666
+    }
+  },
+  {
+    "id": "Q041",
+    "question": "Both Exception 4 and Case Study 2 describe a customer-isolated issue auto-escalating because the customer is an Enterprise Tier Partner. Was this rule applied consistently, and what severities were involved?",
+    "scores": {
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.8629857806111096,
+      "context_precision": 0.7499999999625,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q042",
+    "question": "The general connection pool limit is 100 connections. Case Study 1's root cause involved this exact limit being exhausted by a 400x query slowdown. If the affected service had instead been the Order Processing Database (pool size 250 under Specific Override 2), would the handbook confirm the same root cause would exhaust that pool identically?",
+    "scores": {
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.8920979547880651,
+      "context_precision": 0.49999999995,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q043",
+    "question": "What specific cloud provider (e.g., AWS, GCP, or Azure) hosts OmniScale Systems' production infrastructure?",
+    "scores": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    }
+  },
+  {
+    "id": "Q044",
+    "question": "What programming languages are used to build OmniScale Systems' microservices?",
+    "scores": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    }
+  },
+  {
+    "id": "Q046",
+    "question": "What was the total financial cost or revenue impact of the INC-2024-001 Cascading Connection Collapse incident?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    }
+  },
+  {
+    "id": "Q045",
+    "question": "How many total engineers or employees are on OmniScale Systems' SRE team?",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    }
+  },
+  {
+    "id": "Q047",
+    "question": "What specific version of Kubernetes and which container runtime does OmniScale Systems run in production?",
+    "scores": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    }
+  }
+]

@@ -3,7 +3,8 @@ from typing import Annotated
 from typing_extensions import TypedDict
 from dotenv import load_dotenv
 
-from langchain_core.messages import SystemMessage, add_messages
+from langchain_core.messages import SystemMessage
+from langgraph.graph.message import add_messages
 from langchain_groq import ChatGroq
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition

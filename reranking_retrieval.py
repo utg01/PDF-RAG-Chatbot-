@@ -68,8 +68,10 @@ def cache_retrieval(question, cache_chunks):
 cache_chunks = []
 threshold_score = 0.85
 
+from langchain_core.runnables import RunnableConfig
+
 @tool
-def Query_Handler(question: str, index_name: str) -> str:
+def Query_Handler(question: str, config: RunnableConfig) -> str:
     """
     Use this tool to answer any question about a PDF whose content has already been embedded.
 
@@ -91,6 +93,7 @@ def Query_Handler(question: str, index_name: str) -> str:
     - Use the index_name returned by Create_embeddings — do not guess or fabricate it.
     - If the returned context does not contain the answer, say "I couldn't find this in the PDF." Do not hallucinate.
     """
+    index_name = config["configurable"]["index_name"]
     cache_relevant = cache_retrieval(question=question, cache_chunks=cache_chunks)
 
     if cache_relevant:

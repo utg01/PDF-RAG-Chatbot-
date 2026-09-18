@@ -6,6 +6,8 @@ from langchain_mistralai import MistralAIEmbeddings
 from langchain_pinecone import PineconeVectorStore
 import os
 import re
+from dotenv import load_dotenv
+load_dotenv()
 
 embeddings = MistralAIEmbeddings(
     model="mistral-embed",
@@ -133,3 +135,14 @@ def delete_index(index_name: str) -> str:
         return f"Index {index_name} does not exist"
     except Exception as e:
         return f"delete_index Error: {str(e)}"
+
+
+if __name__=='__main__':
+    PDF_PATH = "Cloud SRE Handbook Generation Plan.pdf"
+
+    result = Create_embeddings.invoke({
+        "file_path": PDF_PATH,
+        "file_name": "Cloud SRE Handbook Generation Plan.pdf"
+    })
+
+    print(result)    

@@ -1,0 +1,378 @@
+[
+  {
+    "id": "Q001",
+    "question": "How many primary macro-regions is OmniScale Systems' infrastructure geographically dispersed across?",
+    "reference_answer": "OmniScale Systems' infrastructure is geographically dispersed across three primary macro-regions, with workloads further distributed across multiple isolated Availability Zones within each region.",
+    "source_pages": "Infrastructure Architecture",
+    "question_type": "Direct factual",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q002",
+    "question": "Which relational database technology does OmniScale Systems use for its primary transactional data stores?",
+    "reference_answer": "PostgreSQL, deployed in a highly available primary-replica architecture.",
+    "source_pages": "Infrastructure Architecture; Database Reliability",
+    "question_type": "Direct factual",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q003",
+    "question": "What tool does OmniScale Systems mandate as a centralized connection pooler for PostgreSQL?",
+    "reference_answer": "PgBouncer.",
+    "source_pages": "Database Reliability",
+    "question_type": "Direct factual",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q004",
+    "question": "What is the default (general) maximum database connection pool size for microservices?",
+    "reference_answer": "100 connections (General Rule 2).",
+    "source_pages": "Policy Priority: General vs Specific Database Rules",
+    "question_type": "Direct factual",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q005",
+    "question": "Whose explicit approval must the Operations Lead obtain before restarting the Core Ledger Database cluster, and why?",
+    "reference_answer": "The Incident Commander's (IC) explicit approval is required, due to the severe risk of data corruption during unclean transactional shutdowns.",
+    "source_pages": "Exceptions to Triage Protocols",
+    "question_type": "Direct factual",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q006",
+    "question": "What statistical test does OmniScale use to evaluate canary deployments against baseline metrics, and why is it preferred over an alternative test?",
+    "reference_answer": "The Mann-Whitney U test (non-parametric), preferred over the Kolmogorov-Smirnov test because production metric distributions are rarely perfectly normal.",
+    "source_pages": "Deployment and Release Failures",
+    "question_type": "Direct factual",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q007",
+    "question": "What is a Circuit Breaker pattern, and what problem does it solve?",
+    "reference_answer": "A protective proxy around outbound network requests that monitors the downstream service's failure rate. When consecutive failures/timeouts exceed a threshold it trips to an Open state and rejects requests immediately (failing fast), preventing the application from wasting threads waiting on a doomed network call and avoiding cascading failures.",
+    "source_pages": "API and Microservice Reliability",
+    "question_type": "Conceptual",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q008",
+    "question": "Explain the concept of an error budget and how it affects engineering behavior when fully depleted.",
+    "reference_answer": "The error budget is the mathematical inverse of the SLO -- the maximum acceptable amount of unreliability a service can experience. When it is entirely depleted, all automated and manual feature deployments are immediately halted and the team's focus shifts entirely to architectural reliability improvements until the rolling 30-day window replenishes the budget.",
+    "source_pages": "Reliability Objectives",
+    "question_type": "Conceptual",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q009",
+    "question": "What is the cache stampede (dog-piling) problem, and what two techniques does OmniScale use to mitigate it?",
+    "reference_answer": "It occurs when a highly popular, computationally expensive cached item expires and thousands of concurrent requests miss the cache simultaneously, hitting the backend database all at once. It is mitigated using probabilistic early expiration algorithms (XFetch) and distributed locking mechanisms.",
+    "source_pages": "Caching Systems",
+    "question_type": "Conceptual",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q010",
+    "question": "Describe the purpose of the Bulkhead pattern and the example used to illustrate it.",
+    "reference_answer": "The Bulkhead pattern isolates resources (like thread pools) so a failure in one dependency doesn't cascade to others. Example: if the external Payment service hangs indefinitely, only the 10 threads dedicated to the Payment bulkhead pool are exhausted, while the Inventory pool's 20 threads and the Recommendation pool's 5 threads continue functioning normally.",
+    "source_pages": "API and Microservice Reliability",
+    "question_type": "Conceptual",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q011",
+    "question": "Why does the handbook insist SLIs be measured at the user-facing boundary rather than deep within internal services, and what example illustrates this?",
+    "reference_answer": "Because what matters is the actual user experience: a request that times out at the gateway but eventually succeeds deep within an internal pod is still classified as a failure from the user's perspective, so SLIs must be measured at the edge gateway or load balancer.",
+    "source_pages": "Reliability Objectives",
+    "question_type": "Conceptual",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q012",
+    "question": "A Tier 1 service (other than the Core Data Warehouse) suffers total loss during a regional outage. Based on the Tier 1 deployment requirement and the DR RTO override, what deployment model and recovery time apply to it?",
+    "reference_answer": "It must use an Active-Active multi-region deployment (the general Tier 1 requirement), and it has an RTO of exactly 15 minutes (Specific Override 9).",
+    "source_pages": "Exceptions to Service Classification; Policy Priority: General vs Specific DR Rules",
+    "question_type": "Multi-hop",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q013",
+    "question": "Compare how a Tier 1 service showing error rates slightly above baseline would be classified and paged on a regular Tuesday versus during the Black Friday/Cyber Monday window.",
+    "reference_answer": "On a regular Tuesday this is a SEV-3 (minor Tier 1 degradation), normally handled asynchronously during business hours without paging on-call engineers. During the Black Friday and Cyber Monday retail windows, Exception 3 automatically escalates all SEV-3 incidents to SEV-2 response protocols, requiring immediate paging and resolution.",
+    "source_pages": "Incident Severity Definitions; Exceptions to Severity Definitions",
+    "question_type": "Multi-hop",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q014",
+    "question": "In Case Study 5 (The Stale Auth Stampede), which specific TTL override caused the Redis cache to be entirely cold after reboot, and which named failure mode explains the resulting load on the IAM database?",
+    "reference_answer": "The TTL for authentication tokens and session validation caches is 5 minutes (Specific Override 6), so after the Redis node was rebooted for patching, the cache was entirely cold. This produced a Cache Stampede (dog-piling), where every incoming request became a cache miss and funneled directly to the primary IAM database simultaneously.",
+    "source_pages": "Policy Priority: General vs Specific Caching Rules; Caching Systems; Case Study 5",
+    "question_type": "Multi-hop",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q015",
+    "question": "Combining the Incident Response Lifecycle's phases with the Post-Incident Review timing rules, how long after a SEV-1 incident's resolution must a preliminary PIR be presented, and to whom?",
+    "reference_answer": "Within 48 hours of resolution (Specific Override 12), a preliminary PIR must be drafted and presented directly to the executive board.",
+    "source_pages": "Incident Response Lifecycle; Policy Priority: General vs Specific PIR Rules",
+    "question_type": "Multi-hop",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q016",
+    "question": "Case Study 7 describes a Raft heartbeat interval of 10 seconds, while the Database Reliability section describes a randomized election timeout of 150-300ms. Using both, what caused the AZ-2 nodes to incorrectly elect a new leader?",
+    "reference_answer": "A core network switch failure severed communication between AZ-1 and AZ-2, so the Raft heartbeat from the AZ-1 leader failed to propagate within the election timeout window. Per Raft's mechanism, the AZ-2 nodes transitioned to candidate state and elected a new leader, while the external load balancer could still route traffic to the original AZ-1 primary, and a misconfigured STONITH fencing script failed to prevent both primaries from accepting writes -- causing split-brain.",
+    "source_pages": "Database Reliability; Case Study 7",
+    "question_type": "Multi-hop",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q017",
+    "question": "Compare Tier 1 and Tier 2 services in terms of what happens when each is degraded.",
+    "reference_answer": "Tier 1 degradation means the entire platform is considered severely impacted, since Tier 1 designates mission-critical, revenue-generating systems or foundational core infrastructure. Tier 2 degradation causes a noticeably degraded user experience, but core user workflows remain functional.",
+    "source_pages": "Service Classification",
+    "question_type": "Comparative",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q018",
+    "question": "Compare the standard circuit breaker error threshold with the threshold used for the Fraud Detection API, and explain the difference.",
+    "reference_answer": "The standard circuit breaker threshold trips at 100 errors per second (General Rule 3), while the Fraud Detection API's threshold specifically trips at just 10 errors per second (Specific Override 3), to instantly cut off traffic if anomalous behavior is detected given its sensitivity.",
+    "source_pages": "Policy Priority: General vs Specific API Rules",
+    "question_type": "Comparative",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q019",
+    "question": "Compare a Bi-encoder and a Cross-Encoder as described in Case Study 6, in terms of speed and accuracy trade-offs.",
+    "reference_answer": "Bi-encoders (vector search) process queries extremely fast. Cross-Encoders process the query and document concatenated together through deep transformer attention layers, which is highly accurate but computationally extremely expensive, requiring about 4ms per document.",
+    "source_pages": "Case Study 6",
+    "question_type": "Comparative",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q020",
+    "question": "Compare the standard RPO for the relational data tier with the RPO mandated for the Core Ledger Database, including how each is achieved.",
+    "reference_answer": "The standard relational tier RPO is 1 hour, satisfied by automated hourly incremental volume snapshots (General Rule 10). The Core Ledger Database has an RPO of exactly 0 seconds, requiring strictly synchronous replication to a secondary availability zone to guarantee zero data loss (Specific Override 10).",
+    "source_pages": "Policy Priority: General vs Specific DR Rules",
+    "question_type": "Comparative",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q021",
+    "question": "What is the relationship between a depleted error budget and feature deployments?",
+    "reference_answer": "When an error budget is entirely depleted, all automated and manual feature deployments are immediately halted, and engineering focus shifts entirely to architectural reliability improvements until the rolling 30-day window replenishes the budget.",
+    "source_pages": "Reliability Objectives",
+    "question_type": "Relationship",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q022",
+    "question": "What causal relationship does the handbook describe between database connection pool exhaustion and application-tier crashes?",
+    "reference_answer": "If horizontally scaling microservices spawn database connections uncontrollably, the database engine cannot service the requests, leading to massive request queues, thread blocking, and eventually latency explosions that crash the application tier.",
+    "source_pages": "Database Reliability",
+    "question_type": "Relationship",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q023",
+    "question": "What is the relationship between replication lag and data loss during a database failover?",
+    "reference_answer": "In asynchronous replication, the read replica continuously trails the primary. If the primary experiences a catastrophic hardware failure and an automated failover occurs, any un-replicated transactions that existed only on the primary are permanently lost.",
+    "source_pages": "Database Reliability",
+    "question_type": "Relationship",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q024",
+    "question": "According to Case Study 4, what is the causal chain connecting the length of the uploaded video files to the eventual stalling of the entire event pipeline?",
+    "reference_answer": "The new 4K videos took longer than 300 seconds to encode, so the consumer threads exceeded the max.poll.interval.ms timeout. The Kafka coordinator assumed the consumers had died and triggered a rebalance storm: all consumers paused, revoked partitions, and rejoined, but the newly assigned consumers also timed out on the same messages, causing a continuous, cascading loop of rebalancing that completely stalled the event pipeline.",
+    "source_pages": "Case Study 4; Message Queues and Event Processing",
+    "question_type": "Relationship",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q025",
+    "question": "What is the exact monthly downtime allowance, in minutes, for a service with a 99.9% SLO evaluated over a rolling 30-day window?",
+    "reference_answer": "43.2 minutes.",
+    "source_pages": "Reliability Objectives",
+    "question_type": "Numerical",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q026",
+    "question": "What burn rate multiplier and time windows trigger OmniScale's fast burn pager alert?",
+    "reference_answer": "A burn rate greater than 14.4x sustained over two concurrent windows: a 1-hour short window AND a 6-hour long window.",
+    "source_pages": "Monitoring and Alerting",
+    "question_type": "Numerical",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q027",
+    "question": "What is the general W3C Baggage header size limit across the platform, and what is the override for the internal gRPC service mesh?",
+    "reference_answer": "The general limit is 8192 bytes (maximum 64 entries) across the platform (General Rule 13). The internal gRPC service mesh is specifically limited to 4096 bytes (Specific Override 13).",
+    "source_pages": "Reliability Metrics; Policy Priority: General vs Specific Metrics Rules",
+    "question_type": "Numerical",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q028",
+    "question": "If a microservice processes 1 million requests per day, how many failed requests are allowed per 30-day month under a 99.9% SLO, and how is this figure derived?",
+    "reference_answer": "30,000 failed requests are allowed. It is derived from 1 million requests/day multiplied by 30 days = 30 million requests/month, and a 99.9% SLO permits a 0.1% failure rate, i.e. 30,000,000 x 0.001 = 30,000.",
+    "source_pages": "Reliability Objectives",
+    "question_type": "Numerical",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q029",
+    "question": "How long does it take to exhaust an entire 30-day error budget when a service sustains a 14.4x burn rate, and which case study illustrates a burn-rate-triggered detection?",
+    "reference_answer": "Approximately 50 hours. Case Study 5 (The Stale Auth Stampede) was detected via a fast-burn SLI alert triggered on IAM API latency.",
+    "source_pages": "Monitoring and Alerting; Case Study 5",
+    "question_type": "Numerical",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q030",
+    "question": "Define a Service Level Indicator (SLI) as given in the handbook.",
+    "reference_answer": "A quantitative measurement of the actual user experience, typically expressed as a ratio of good events to total events.",
+    "source_pages": "Reliability Objectives; Glossary",
+    "question_type": "Definition",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q031",
+    "question": "Define Burn Rate per the glossary.",
+    "reference_answer": "The mathematical speed at which a service is consuming its error budget relative to a 30-day window.",
+    "source_pages": "Glossary",
+    "question_type": "Definition",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q032",
+    "question": "What is the definition of the Poison Pill failure mode in Kafka-based event processing?",
+    "reference_answer": "When a consumer encounters a malformed message that triggers an unhandled panic, it crashes. Upon restarting it reads the exact same uncommitted offset, pulls the poison pill message again, and crashes in an infinite loop, causing head-of-line blocking.",
+    "source_pages": "Message Queues and Event Processing",
+    "question_type": "Definition",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q033",
+    "question": "Define Active-Active and explain how it is distinguished from Active-Passive in the glossary.",
+    "reference_answer": "Active-Active is a disaster recovery architecture where multiple regions handle live traffic simultaneously, with RTO near zero. Active-Passive is a disaster recovery architecture where one region handles traffic while another stands by, receiving replicated data but not actively processing user requests.",
+    "source_pages": "Glossary",
+    "question_type": "Definition",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q034",
+    "question": "What does a traceparent header trace-flags value of 01 indicate, per the W3C Trace Context definition in the handbook?",
+    "reference_answer": "That the trace is sampled (a value of 00 means it is not sampled).",
+    "source_pages": "Reliability Metrics",
+    "question_type": "Definition",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q035",
+    "question": "A Tier 3 internal reporting dashboard experiences a complete outage on a normal Wednesday. What severity would this be classified as, and would the on-call engineer be paged immediately?",
+    "reference_answer": "This would be classified as SEV-3 (Medium), since it is the complete loss of a Tier 3 internal tool with minimal end-user impact. SEV-3 incidents are normally handled asynchronously during standard business hours without waking up on-call engineers (this exception only changes during the Black Friday/Cyber Monday window, which does not apply here).",
+    "source_pages": "Incident Severity Definitions; Exceptions to Severity Definitions",
+    "question_type": "Scenario",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q036",
+    "question": "An engineer wants to deploy a routine, non-emergency code change on a Friday evening. Is this permitted under the handbook's deployment policy?",
+    "reference_answer": "No. Routine code deployments are only freely permitted Monday through Thursday. Friday evenings fall within the freeze window; only emergency hotfixes addressing zero-day security vulnerabilities with a CVSS score above 9.0 are explicitly permitted to bypass freeze windows and deploy at any time, including Friday evenings and holidays.",
+    "source_pages": "Exceptions to Deployment Policies",
+    "question_type": "Scenario",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q037",
+    "question": "A downstream REST endpoint charges a customer's credit card without an idempotency key, and a transient HTTP 503 occurs on that call. Per the retry policy, what should the client do, and why?",
+    "reference_answer": "The client should not retry. For downstream endpoints explicitly marked as non-idempotent, such as charging a credit card without a unique idempotency key payload, the retry limit is overridden to 0 (Specific Override 5) to entirely eliminate the risk of duplicate billing, overriding the general default of 3 retries.",
+    "source_pages": "Policy Priority: General vs Specific Network Rules",
+    "question_type": "Scenario",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q038",
+    "question": "A SEV-1 incident is declared involving a confirmed data breach with exfiltrated customer data. Who assumes the Incident Commander role, and how does public communication differ from a standard incident?",
+    "reference_answer": "The Incident Commander role is forcibly and immediately assumed by the Director of Security Operations (Exception 5), rather than the most senior on-call SRE. Because it is a suspected data breach, the standard 30-minute status page update rule is entirely suspended -- Legal and PR must manually review and explicitly approve every single public update before it is published, regardless of the delay (Specific Override 11).",
+    "source_pages": "Exceptions to Triage Protocols; Policy Priority: General vs Specific Communication Rules",
+    "question_type": "Scenario",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q039",
+    "question": "The handbook labels two different policies 'Specific Override 10' -- one in the DR Rules policy summary and one in Case Study 6's preventive measures. What are these two policies, and how might this naming overlap confuse a reader?",
+    "reference_answer": "In the Policy Priority: General vs Specific DR Rules section, Specific Override 10 refers to the Core Ledger Database's RPO override to exactly 0 seconds via synchronous replication. In Case Study 6's preventive measures, the same label 'Specific Override 10' is used to describe restricting cross-encoder reranking to the top 20 candidates for latency-sensitive search. These are unrelated policies sharing the same override number, an inconsistency in the document that could cause confusion or retrieval errors if a query relies on the override number alone without section context.",
+    "source_pages": "Policy Priority: General vs Specific DR Rules; Case Study 6",
+    "question_type": "Adversarial",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q040",
+    "question": "Case Study 7 states the Raft heartbeat interval is 10 seconds, but the Database Reliability section states the randomized election timeout is typically 150-300ms. Are these the same parameter?",
+    "reference_answer": "The handbook does not explicitly reconcile the two figures. The Database Reliability section defines a randomized election timeout of 150-300ms as the window in which a follower must receive heartbeats before becoming a candidate, while Case Study 7 separately references a 'Raft consensus heartbeat interval (10s)' that failed to propagate during the network partition. These are two different stated values for Raft timing in the same document, and a careful reader should treat them as a potential inconsistency rather than assuming they describe the identical parameter.",
+    "source_pages": "Database Reliability; Case Study 7",
+    "question_type": "Adversarial",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q041",
+    "question": "Both Exception 4 and Case Study 2 describe a customer-isolated issue auto-escalating because the customer is an Enterprise Tier Partner. Was this rule applied consistently, and what severities were involved?",
+    "reference_answer": "Yes. Exception 4 states that an HTTP 500 error spike isolated to a single customer tenant is normally a SEV-3, but is automatically elevated to SEV-2 if the affected customer is an Enterprise Tier Partner. Case Study 2 (INC-2024-042) is documented with severity 'SEV-3 (Automatically escalated to SEV-2 due to Enterprise partner impact)', confirming the rule was applied consistently in that incident.",
+    "source_pages": "Exceptions to Severity Definitions; Case Study 2",
+    "question_type": "Adversarial",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q042",
+    "question": "The general connection pool limit is 100 connections. Case Study 1's root cause involved this exact limit being exhausted by a 400x query slowdown. If the affected service had instead been the Order Processing Database (pool size 250 under Specific Override 2), would the handbook confirm the same root cause would exhaust that pool identically?",
+    "reference_answer": "The handbook does not provide enough information to confirm this. It only states the Order Processing Database's pool size is overridden to 250 connections (Specific Override 2); it does not state that database's query volume, concurrency, or whether a 400x latency increase there would also exhaust its larger pool. Case Study 1 describes the mechanism only for the UserProfile API/OrderDB pair, so the handbook cannot answer whether an identical failure would occur for the Order Processing Database.",
+    "source_pages": "Policy Priority: General vs Specific Database Rules; Case Study 1",
+    "question_type": "Adversarial",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q043",
+    "question": "What specific cloud provider (e.g., AWS, GCP, or Azure) hosts OmniScale Systems' production infrastructure?",
+    "reference_answer": "This is not stated in the handbook. It describes an S3-compatible object storage layer and Kubernetes orchestration, but does not name a specific public cloud provider.",
+    "source_pages": "Not applicable -- not present in the document",
+    "question_type": "Unanswerable",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q044",
+    "question": "What programming languages are used to build OmniScale Systems' microservices?",
+    "reference_answer": "Not available in the handbook -- it does not specify any programming languages used for its microservices.",
+    "source_pages": "Not applicable -- not present in the document",
+    "question_type": "Unanswerable",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q045",
+    "question": "How many total engineers or employees are on OmniScale Systems' SRE team?",
+    "reference_answer": "Not stated in the handbook -- no team size or headcount figures are given.",
+    "source_pages": "Not applicable -- not present in the document",
+    "question_type": "Unanswerable",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q046",
+    "question": "What was the total financial cost or revenue impact of the INC-2024-001 Cascading Connection Collapse incident?",
+    "reference_answer": "Not available in the handbook -- Case Study 1 describes the symptoms, timeline, root cause, and remediation, but no financial cost or revenue impact figures are provided.",
+    "source_pages": "Not applicable -- not present in the document",
+    "question_type": "Unanswerable",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q047",
+    "question": "What specific version of Kubernetes and which container runtime does OmniScale Systems run in production?",
+    "reference_answer": "Not stated in the handbook -- it references Kubernetes orchestration generally but gives no version number or container runtime details.",
+    "source_pages": "Not applicable -- not present in the document",
+    "question_type": "Unanswerable",
+    "difficulty": "Hard"
+  }
+]

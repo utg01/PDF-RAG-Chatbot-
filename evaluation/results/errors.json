@@ -1,0 +1,219 @@
+[
+  {
+    "id": "Q045",
+    "agent": "baseline",
+    "question": "How many total engineers or employees are on OmniScale Systems' SRE team?",
+    "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT",
+    "timestamp": 1789686134.5146978
+  },
+  {
+    "id": "Q047",
+    "agent": "baseline",
+    "question": "What specific version of Kubernetes and which container runtime does OmniScale Systems run in production?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199489, Requested 1612. Please try again in 7m55.632s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686316.0225894
+  },
+  {
+    "id": "Q001",
+    "agent": "advanced",
+    "question": "How many primary macro-regions is OmniScale Systems' infrastructure geographically dispersed across?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199419, Requested 927. Please try again in 2m29.472s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686346.2741046
+  },
+  {
+    "id": "Q002",
+    "agent": "advanced",
+    "question": "Which relational database technology does OmniScale Systems use for its primary transactional data stores?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199350, Requested 952. Please try again in 2m10.464s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686376.4794576
+  },
+  {
+    "id": "Q003",
+    "agent": "advanced",
+    "question": "What tool does OmniScale Systems mandate as a centralized connection pooler for PostgreSQL?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199280, Requested 928. Please try again in 1m29.856s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686406.6906939
+  },
+  {
+    "id": "Q004",
+    "agent": "advanced",
+    "question": "What is the default (general) maximum database connection pool size for microservices?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199210, Requested 985. Please try again in 1m24.24s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686436.9533458
+  },
+  {
+    "id": "Q005",
+    "agent": "advanced",
+    "question": "Whose explicit approval must the Operations Lead obtain before restarting the Core Ledger Database cluster, and why?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199533, Requested 1709. Please try again in 8m56.544s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686515.1819708
+  },
+  {
+    "id": "Q006",
+    "agent": "advanced",
+    "question": "What statistical test does OmniScale use to evaluate canary deployments against baseline metrics, and why is it preferred over an alternative test?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199920, Requested 651. Please try again in 4m6.672s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686570.056774
+  },
+  {
+    "id": "Q007",
+    "agent": "advanced",
+    "question": "What is a Circuit Breaker pattern, and what problem does it solve?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199850, Requested 954. Please try again in 5m47.328s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686600.26015
+  },
+  {
+    "id": "Q008",
+    "agent": "advanced",
+    "question": "Explain the concept of an error budget and how it affects engineering behavior when fully depleted.",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199780, Requested 956. Please try again in 5m17.952s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686630.4998548
+  },
+  {
+    "id": "Q009",
+    "agent": "advanced",
+    "question": "What is the cache stampede (dog-piling) problem, and what two techniques does OmniScale use to mitigate it?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199710, Requested 1021. Please try again in 5m15.792s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686660.7251532
+  },
+  {
+    "id": "Q010",
+    "agent": "advanced",
+    "question": "Describe the purpose of the Bulkhead pattern and the example used to illustrate it.",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199640, Requested 1012. Please try again in 4m41.664s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686690.945369
+  },
+  {
+    "id": "Q011",
+    "agent": "advanced",
+    "question": "Why does the handbook insist SLIs be measured at the user-facing boundary rather than deep within internal services, and what example illustrates this?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199570, Requested 1023. Please try again in 4m16.176s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686721.1652198
+  },
+  {
+    "id": "Q012",
+    "agent": "advanced",
+    "question": "A Tier 1 service (other than the Core Data Warehouse) suffers total loss during a regional outage. Based on the Tier 1 deployment requirement and the DR RTO override, what deployment model and recovery time apply to it?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199500, Requested 990. Please try again in 3m31.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686751.3896623
+  },
+  {
+    "id": "Q013",
+    "agent": "advanced",
+    "question": "Compare how a Tier 1 service showing error rates slightly above baseline would be classified and paged on a regular Tuesday versus during the Black Friday/Cyber Monday window.",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199609, Requested 1994. Please try again in 11m32.496s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686826.383485
+  },
+  {
+    "id": "Q014",
+    "agent": "advanced",
+    "question": "In Case Study 5 (The Stale Auth Stampede), which specific TTL override caused the Redis cache to be entirely cold after reboot, and which named failure mode explains the resulting load on the IAM database?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199539, Requested 1120. Please try again in 4m44.688s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686856.5770807
+  },
+  {
+    "id": "Q015",
+    "agent": "advanced",
+    "question": "Combining the Incident Response Lifecycle's phases with the Post-Incident Review timing rules, how long after a SEV-1 incident's resolution must a preliminary PIR be presented, and to whom?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199469, Requested 982. Please try again in 3m14.832s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686886.799142
+  },
+  {
+    "id": "Q016",
+    "agent": "advanced",
+    "question": "Case Study 7 describes a Raft heartbeat interval of 10 seconds, while the Database Reliability section describes a randomized election timeout of 150-300ms. Using both, what caused the AZ-2 nodes to incorrectly elect a new leader?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199399, Requested 1083. Please try again in 3m28.224s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686916.9997108
+  },
+  {
+    "id": "Q017",
+    "agent": "advanced",
+    "question": "Compare Tier 1 and Tier 2 services in terms of what happens when each is degraded.",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199329, Requested 1079. Please try again in 2m56.256s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686947.201276
+  },
+  {
+    "id": "Q018",
+    "agent": "advanced",
+    "question": "Compare the standard circuit breaker error threshold with the threshold used for the Fraud Detection API, and explain the difference.",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199742, Requested 1285. Please try again in 7m23.664s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789686982.5030406
+  },
+  {
+    "id": "Q019",
+    "agent": "advanced",
+    "question": "Compare a Bi-encoder and a Cross-Encoder as described in Case Study 6, in terms of speed and accuracy trade-offs.",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199672, Requested 1290. Please try again in 6m55.584s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789687012.71402
+  },
+  {
+    "id": "Q020",
+    "agent": "advanced",
+    "question": "Compare the standard RPO for the relational data tier with the RPO mandated for the Core Ledger Database, including how each is achieved.",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199602, Requested 652. Please try again in 1m49.728s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789687042.9762335
+  },
+  {
+    "id": "Q021",
+    "agent": "advanced",
+    "question": "What is the relationship between a depleted error budget and feature deployments?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199532, Requested 1148. Please try again in 4m53.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789687073.2424512
+  },
+  {
+    "id": "Q022",
+    "agent": "advanced",
+    "question": "What causal relationship does the handbook describe between database connection pool exhaustion and application-tier crashes?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199462, Requested 903. Please try again in 2m37.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789687103.5628216
+  },
+  {
+    "id": "Q023",
+    "agent": "advanced",
+    "question": "What is the relationship between replication lag and data loss during a database failover?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199311, Requested 901. Please try again in 1m31.584s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789687168.9578807
+  },
+  {
+    "id": "Q024",
+    "agent": "advanced",
+    "question": "According to Case Study 4, what is the causal chain connecting the length of the uploaded video files to the eventual stalling of the entire event pipeline?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199800, Requested 1591. Please try again in 10m0.912s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789687206.6872
+  },
+  {
+    "id": "Q025",
+    "agent": "advanced",
+    "question": "What is the exact monthly downtime allowance, in minutes, for a service with a 99.9% SLO evaluated over a rolling 30-day window?",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m2r7977qe5vaekgc25y7fsjt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199729, Requested 868. Please try again in 4m17.904s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "timestamp": 1789687237.1839006
+  },
+  {
+    "id": "Q019",
+    "agent": "advanced",
+    "question": "Compare a Bi-encoder and a Cross-Encoder as described in Case Study 6, in terms of speed and accuracy trade-offs.",
+    "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT",
+    "timestamp": 1789688425.2479463
+  },
+  {
+    "id": "Q039",
+    "agent": "advanced",
+    "question": "The handbook labels two different policies 'Specific Override 10' -- one in the DR Rules policy summary and one in Case Study 6's preventive measures. What are these two policies, and how might this naming overlap confuse a reader?",
+    "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT",
+    "timestamp": 1789688861.4676576
+  },
+  {
+    "id": "Q045",
+    "agent": "advanced",
+    "question": "How many total engineers or employees are on OmniScale Systems' SRE team?",
+    "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT",
+    "timestamp": 1789689256.9335587
+  },
+  {
+    "id": "Q047",
+    "agent": "advanced",
+    "question": "What specific version of Kubernetes and which container runtime does OmniScale Systems run in production?",
+    "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT",
+    "timestamp": 1789689480.0571494
+  }
+]

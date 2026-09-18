@@ -3,11 +3,13 @@ from typing import Annotated
 from typing_extensions import TypedDict
 from dotenv import load_dotenv
 
-from langchain_core.messages import SystemMessage, add_messages
+from langchain_core.messages import SystemMessage
+from langgraph.graph.message import add_messages
 from langchain_core.tools import tool
 from langchain_groq import ChatGroq
 from langchain_mistralai import MistralAIEmbeddings
 from langchain_pinecone import PineconeVectorStore
+from langchain_core.runnables import RunnableConfig
 
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
@@ -20,27 +22,34 @@ embeddings = MistralAIEmbeddings(
     api_key=os.getenv("MISTRAL_API_KEY")
 )
 
-system_prompt = SystemMessage("""
-You are a PDF assistant. Your job is to answer questions about the uploaded PDF based only on its content.
+system_prompt = SystemMessage(content="""
+You are a PDF question-answering assistant.
 
-You have access to one tool:
-Query_Handler(question, index_name) — Retrieves relevant information from the uploaded PDF.
+You have access to Query_Handler, which retrieves relevant information from the uploaded PDF.
 
 Rules:
-- Always use Query_Handler to answer questions about the PDF.
-- Only answer based on the context returned by Query_Handler.
-- Do not make up information.
-- If the retrieved context does not contain the answer, say "I couldn't find this in the PDF."
-- Keep answers concise and relevant.
+1. Use Query_Handler when you need information from the PDF.
+2. You may call Query_Handler multiple times when necessary, especially for multi-hop questions or when refining a search query.
+3. However, do NOT call Query_Handler more than 3 times for a single user question.
+4. After 3 retrieval attempts, stop searching and answer using the information retrieved so far.
+5. If the retrieved context does not contain enough information to answer the question, say:
+   "I couldn't find this in the PDF."
+6. Do not invent or use information that is not present in the retrieved PDF context.
 """)
 
+
 @tool
-def Query_Handler(question: str, index_name: str) -> str:
+def Query_Handler(
+    question: str,
+    config: RunnableConfig
+) -> str:
     """
     Retrieves relevant chunks from the uploaded PDF using
     standard similarity search.
     """
     try:
+        index_name = config["configurable"]["index_name"]
+
         vectorstore = PineconeVectorStore(
             index_name=index_name,
             embedding=embeddings
@@ -48,7 +57,7 @@ def Query_Handler(question: str, index_name: str) -> str:
 
         docs = vectorstore.similarity_search(
             question,
-            k=5
+            k=3
         )
 
         if not docs:
