@@ -6,8 +6,8 @@ import uuid
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, AIMessage, ToolMessage
 
-from simple_rag_agent import agent as baseline_agent
-from agent import agent as advanced_agent
+from baseline import agent as baseline_agent
+from advanced import agent as advanced_agent
 
 load_dotenv()
 
