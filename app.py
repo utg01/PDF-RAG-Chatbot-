@@ -6,7 +6,7 @@ from langchain_core.messages import HumanMessage, AIMessage
 
 
 #from agent import agent
-from agent import agent
+from advanced import agent
 from ingestion import Create_embeddings, delete_index
 
 st.set_page_config(
